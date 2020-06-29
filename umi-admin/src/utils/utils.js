@@ -72,12 +72,16 @@ export const isJsonString = str => {
   return false;
 };
 
-export const checkToken = () => {
-  const token = sessionStorage.getItem("mat");
+export const getParseJwt = () => {
+  const token = localStorage.getItem("_token");
   if (!token) {
     return false;
   }
-  return token;
+  const user = JSON.parse(localStorage.getItem("_user"));
+  return {
+    ...user,
+    token
+  };
 };
 
 export const getBase64 = file =>

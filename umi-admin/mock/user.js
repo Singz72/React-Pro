@@ -1,18 +1,16 @@
 export default {
-  // 支持值为 Object 和 Array
-  "GET /api/currentUser": {
-    name: "用户",
-    avatar: "https://macdn.microants.cn/user.png",
-    userid: "00000001"
-  },
   "POST /api/login": (req, res) => {
-    const { inputpass, userName, type } = req.body;
+    const { inputpass, userName } = req.body;
 
     if (inputpass === "123" && userName === "admin") {
       res.send({
         status: "ok",
-        type,
-        currentAuthority: "admin"
+        currentAuthority: "admin",
+        userName,
+        nick: "海绵宝宝",
+        avatar: "http://singz72.com/blogImage/haimianbb.jpeg",
+        userid: "00000001",
+        token: "xxxxxx111xxxxxx"
       });
       return;
     }
@@ -20,15 +18,18 @@ export default {
     if (inputpass === "123" && userName === "user") {
       res.send({
         status: "ok",
-        type,
-        currentAuthority: "user"
+        currentAuthority: "user",
+        userName,
+        nick: "派大星",
+        avatar: "http://singz72.com/blogImage/paidaxing.jpg",
+        userid: "00000002",
+        token: "xxxxxx111xxxxxx"
       });
       return;
     }
 
     res.send({
       status: "error",
-      type,
       currentAuthority: "guest"
     });
   },

@@ -112,7 +112,12 @@ const BasicLayout = props => {
       {...props}
       {...settings}
       logo={logo}
-      menuHeaderRender={(logoDom, titleDom) => <Link to="/">{titleDom}</Link>}
+      menuHeaderRender={(logoDom, titleDom) => (
+        <Link to="/">
+          {logoDom}
+          {titleDom}
+        </Link>
+      )}
     >
       <Authorized authority={authorized.authority} noMatch={noMatch}>
         {children}

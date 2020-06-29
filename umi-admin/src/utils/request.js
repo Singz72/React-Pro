@@ -71,7 +71,7 @@ const request = extend({
   prefix: "/api/",
   timeout: 1000,
   headers: {
-    Authorization: sessionStorage.getItem("mat") // 用户token
+    Authorization: localStorage.getItem("mat") // 用户token
   }
 });
 

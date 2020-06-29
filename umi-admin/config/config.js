@@ -101,11 +101,6 @@ export default {
                   path: "/pageA/pageA1",
                   name: "Page-A-1",
                   component: "./pageA/pageA1"
-                },
-                {
-                  path: "/pageA/pageA2",
-                  name: "Page-A-2",
-                  component: "./pageA/pageA2"
                 }
               ]
             },
@@ -117,11 +112,6 @@ export default {
                   path: "/pageB/pageB1",
                   name: "Page-B-1",
                   component: "./pageB/pageB1"
-                },
-                {
-                  path: "/pageB/pageB2",
-                  name: "Page-B-2",
-                  component: "./pageB/pageB2"
                 }
               ]
             },
@@ -191,6 +181,6 @@ export default {
     },
   },
   */
-  base: "/db/",
-  publicPath: "/db/"
+  base: "/umiadmin/",
+  publicPath: "/umiadmin/"
 };

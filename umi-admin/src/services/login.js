@@ -1,9 +1,8 @@
-import request from "umi-request";
-import { apiUrl } from "@/utils/utils";
+import request from "@/utils/request";
 
 export async function fakeAccountLogin(params) {
-  return request(`${apiUrl()}/login`, {
+  return request("login", {
     method: "POST",
-    params
+    data: params
   });
 }

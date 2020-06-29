@@ -21,14 +21,14 @@ class Comp extends Component {
   }
 
   render() {
-    const { data, userName } = this.props.welcome;
+    const { views, nick } = this.props.welcome;
 
     const PageHeaderContent = () => (
       <div className={style.pageHeaderContent}>
         <div className={style.content}>
           <div className={style.contentTitle}>
             欢迎管理员：
-            {userName}
+            {nick}
             ，祝你开心每一天！
           </div>
           <div>当前时间：{handleDate(new Date())}</div>
@@ -43,7 +43,7 @@ class Comp extends Component {
             <div className={style.num}>
               <Row gutter={24}>
                 <Col span={24}>
-                  <Statistic title="商品数" value={data} />
+                  <Statistic title="访问量" value={views} />
                 </Col>
               </Row>
             </div>

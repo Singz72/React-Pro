@@ -1,20 +1,5 @@
 import { message } from "antd";
-import { checkToken } from "@/utils/utils";
-import { queryLangs } from "@/services/user";
-import userImg from "@/assets/images/user.png";
-
-const getParseJwt = () => {
-  const token = checkToken();
-  if (!token) {
-    return false;
-  }
-  const user = JSON.parse(sessionStorage.getItem("_user"));
-  return {
-    ...user,
-    avatar: userImg,
-    token
-  };
-};
+import { getParseJwt } from "@/utils/utils";
 
 const UserModel = {
   namespace: "user",
@@ -33,16 +18,6 @@ const UserModel = {
           type: "saveCurrentUser",
           payload: jwt
         });
-      }
-    },
-    *queryLangs({ payload }, { call }) {
-      const response = yield call(queryLangs);
-      if (response.success) {
-        if (payload.callback) {
-          payload.callback(response.data);
-        }
-      } else {
-        message.error("多语言数据获取失败！", 4);
       }
     }
   },

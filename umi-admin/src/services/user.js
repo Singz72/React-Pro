@@ -16,7 +16,3 @@ export async function queryCurrent() {
 export async function queryNotices() {
   return request("/api/notices");
 }
-
-export async function queryLangs() {
-  return request("db.company.dbCompanyGetLangSetsApiService");
-}

@@ -33,7 +33,7 @@ class Login extends Component {
         type: "login/login",
         payload: {
           data: {
-            username: values.userName,
+            userName: values.userName,
             inputpass: values.password,
             type
           }

@@ -4,8 +4,8 @@ import { queryRule } from "./service";
 const Model = {
   namespace: "welcome",
   state: {
-    data: 0,
-    userName: ""
+    views: 0,
+    nick: ""
   },
   effects: {
     *fetch(_, { call, put }) {
@@ -14,7 +14,7 @@ const Model = {
         yield put({
           type: "save",
           payload: {
-            data: response.data
+            views: response.views
           }
         });
       } else {
@@ -22,11 +22,11 @@ const Model = {
       }
     },
     *getUser(_, { put }) {
-      const user = JSON.parse(sessionStorage.getItem("_user"));
+      const user = JSON.parse(localStorage.getItem("_user"));
       yield put({
         type: "save",
         payload: {
-          userName: user.userName
+          nick: user.nick
         }
       });
     }

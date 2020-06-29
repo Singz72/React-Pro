@@ -29,7 +29,6 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint-staged"
     }
   },
   "lint-staged": {
@@ -99,7 +98,7 @@
     "import-sort-style-module": "^6.0.0",
     "jest-puppeteer": "^4.2.0",
     "lint-staged": "^9.4.2",
-    "mockjs": "^1.0.1-beta3",
+    "mockjs": "^1.1.0",
     "node-fetch": "^2.6.0",
     "prettier": "^1.17.1",
     "pro-download": "1.0.1",

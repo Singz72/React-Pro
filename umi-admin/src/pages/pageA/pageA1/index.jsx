@@ -6,22 +6,26 @@ import "./index.less";
 
 const columns = [
   {
-    title: "角色名称",
-    dataIndex: "name"
+    title: "id",
+    dataIndex: "id"
   },
   {
-    title: "功能说明",
-    dataIndex: "description"
+    title: "系列",
+    dataIndex: "series"
+  },
+  {
+    title: "时间",
+    dataIndex: "date"
   }
 ];
 
 @connect(
-  ({ originRole }) => ({
-    originRole
+  ({ pagea1 }) => ({
+    pagea1
   }),
   dispatch => ({
     getDetails(payload) {
-      dispatch({ type: "originRole/fetch", payload });
+      dispatch({ type: "pagea1/fetch", payload });
     }
   })
 )
@@ -36,7 +40,7 @@ class Comp extends Component {
   }
 
   render() {
-    const { list } = this.props.originRole;
+    const { list } = this.props.pagea1;
     return (
       <PageHeaderWrapper>
         <Card bordered={false}>
